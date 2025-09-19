@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Commodity Exchange Design System - Industrial Tech Fusion */
+
+@layer base {
+  :root {
+    /* Core Dark Theme */
+    --background: 220 15% 8%;
+    --foreground: 45 100% 95%;
+
+    /* Card Systems */
+    --card: 220 15% 12%;
+    --card-foreground: 45 100% 95%;
+
+    /* Popover Elements */
+    --popover: 220 15% 10%;
+    --popover-foreground: 45 100% 95%;
+
+    /* Gold Primary (Commodity Theme) */
+    --primary: 45 100% 65%;
+    --primary-foreground: 220 15% 8%;
+
+    /* Industrial Secondary */
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 45 100% 90%;
+
+    /* Muted Elements */
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 60%;
+
+    /* Neon Cyan Accent */
+    --accent: 180 100% 70%;
+    --accent-foreground: 220 15% 8%;
+
+    /* Trade Status Colors */
+    --success: 120 100% 60%;
+    --success-foreground: 220 15% 8%;
+    
+    --warning: 35 100% 65%;
+    --warning-foreground: 220 15% 8%;
+
+    --destructive: 0 100% 65%;
+    --destructive-foreground: 45 100% 95%;
+
+    /* Interface Elements */
+    --border: 220 15% 25%;
+    --input: 220 15% 15%;
+    --ring: 180 100% 70%;
+
+    /* Design Properties */
+    --radius: 0.75rem;
+
+    /* Custom Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(45 100% 65%), hsl(35 100% 55%));
+    --gradient-neon: linear-gradient(135deg, hsl(180 100% 70%), hsl(200 100% 60%));
+    --gradient-industrial: linear-gradient(180deg, hsl(220 15% 12%), hsl(220 15% 8%));
+    
+    /* Glow Effects */
+    --glow-gold: 0 0 20px hsl(45 100% 65% / 0.3);
+    --glow-neon: 0 0 20px hsl(180 100% 70% / 0.4);
+    --glow-primary: 0 0 30px hsl(45 100% 65% / 0.2);
+
+    /* Animation Timings */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Dark mode uses same colors - single theme design */
+  .dark {
+    --background: 220 15% 8%;
+    --foreground: 45 100% 95%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-mono;
+  }
+
+  /* Custom utility classes */
+  .glow-gold {
+    box-shadow: var(--glow-gold);
+  }
+  
+  .glow-neon {
+    box-shadow: var(--glow-neon);
+  }
+  
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+  
+  .bg-gradient-neon {
+    background: var(--gradient-neon);
+  }
+
+  .bg-gradient-industrial {
+    background: var(--gradient-industrial);
+  }
+
+  /* Conveyor belt animation */
+  .conveyor-belt {
+    background: repeating-linear-gradient(
+      90deg,
+      hsl(220 15% 20%),
+      hsl(220 15% 20%) 20px,
+      hsl(220 15% 25%) 20px,
+      hsl(220 15% 25%) 40px
+    );
+    animation: conveyor 10s linear infinite;
+  }
+
+  @keyframes conveyor {
+    0% { background-position: 0 0; }
+    100% { background-position: 200px 0; }
+  }
+
+  /* Price ticker animation */
+  @keyframes price-pulse {
+    0%, 100% { 
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% { 
+      transform: scale(1.05);
+      opacity: 0.8;
+    }
+  }
+
+  .price-pulse {
+    animation: price-pulse 2s ease-in-out infinite;
+  }
+
+  /* Circuit glow effect */
+  @keyframes circuit-glow {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+
+  .circuit-glow {
+    animation: circuit-glow 3s ease-in-out infinite;
+  }
+}
