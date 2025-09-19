@@ -1,6 +1,8 @@
 import { CommodityCard } from "@/components/ui/commodity-card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, TrendingUp, BarChart3, Database } from "lucide-react";
 
 const commodities = [
   {
@@ -88,15 +90,73 @@ export const TradingDashboard = () => {
           </div>
           
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Active Commodity Markets
+            Platform Overview
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Real-time pricing for physical commodities with encrypted trade execution 
-            until delivery confirmation.
+            Comprehensive trading platform with encrypted data management and real-time analytics.
           </p>
         </div>
 
         <Separator className="mb-8 bg-border/30" />
+
+        {/* Platform Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="p-6 bg-card/50 rounded-lg border border-border/30 text-center hover:bg-card/70 transition-colors">
+            <TrendingUp className="w-8 h-8 text-primary mx-auto mb-4" />
+            <h3 className="text-lg font-semibold mb-2">Markets</h3>
+            <p className="text-sm text-muted-foreground mb-4">Real-time commodity trading with encrypted execution</p>
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={() => window.location.href = '/markets'}
+              className="w-full"
+            >
+              View Markets <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </div>
+
+          <div className="p-6 bg-card/50 rounded-lg border border-border/30 text-center hover:bg-card/70 transition-colors">
+            <BarChart3 className="w-8 h-8 text-accent mx-auto mb-4" />
+            <h3 className="text-lg font-semibold mb-2">Portfolio</h3>
+            <p className="text-sm text-muted-foreground mb-4">Track your encrypted positions and performance</p>
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={() => window.location.href = '/portfolio'}
+              className="w-full"
+            >
+              View Portfolio <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </div>
+
+          <div className="p-6 bg-card/50 rounded-lg border border-border/30 text-center hover:bg-card/70 transition-colors">
+            <BarChart3 className="w-8 h-8 text-success mx-auto mb-4" />
+            <h3 className="text-lg font-semibold mb-2">Analytics</h3>
+            <p className="text-sm text-muted-foreground mb-4">Advanced market insights and trading analytics</p>
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={() => window.location.href = '/analytics'}
+              className="w-full"
+            >
+              View Analytics <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </div>
+
+          <div className="p-6 bg-card/50 rounded-lg border border-border/30 text-center hover:bg-card/70 transition-colors">
+            <Database className="w-8 h-8 text-warning mx-auto mb-4" />
+            <h3 className="text-lg font-semibold mb-2">Encrypted Data</h3>
+            <p className="text-sm text-muted-foreground mb-4">Manage your encrypted trading data securely</p>
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={() => window.location.href = '/encrypted-data'}
+              className="w-full"
+            >
+              View Data <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </div>
+        </div>
 
         {/* Market Overview Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 p-6 bg-card/50 rounded-lg border border-border/30">
@@ -118,14 +178,26 @@ export const TradingDashboard = () => {
           </div>
         </div>
 
-        {/* Commodity Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-          {commodities.map((commodity, index) => (
-            <CommodityCard
-              key={commodity.symbol}
-              {...commodity}
-            />
-          ))}
+        {/* Quick Market Preview */}
+        <div className="mb-8">
+          <h3 className="text-xl font-semibold mb-4 text-center">Live Market Preview</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+            {commodities.slice(0, 3).map((commodity, index) => (
+              <CommodityCard
+                key={commodity.symbol}
+                {...commodity}
+              />
+            ))}
+          </div>
+          <div className="text-center mt-6">
+            <Button 
+              variant="outline"
+              onClick={() => window.location.href = '/markets'}
+              className="glow-neon"
+            >
+              View All Markets <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </div>
         </div>
 
         {/* Market Status */}

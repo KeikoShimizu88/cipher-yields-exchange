@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Loader2, Shield, Lock, Database } from 'lucide-react';
+import { Loader2, Database, Key, FileText } from 'lucide-react';
 
 // Contract ABI for encrypted data functions
 const CONTRACT_ABI = [
@@ -174,7 +174,7 @@ export const EncryptedDataManager: React.FC = () => {
       <Card className="w-full max-w-2xl mx-auto">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Shield className="h-5 w-5" />
+            <Database className="h-5 w-5" />
             Encrypted Data Manager
           </CardTitle>
           <CardDescription>
@@ -183,7 +183,7 @@ export const EncryptedDataManager: React.FC = () => {
         </CardHeader>
         <CardContent>
           <Alert>
-            <Lock className="h-4 w-4" />
+            <Key className="h-4 w-4" />
             <AlertDescription>
               Please connect your wallet to access encrypted data management features.
             </AlertDescription>
@@ -285,7 +285,7 @@ export const EncryptedDataManager: React.FC = () => {
                 </>
               ) : (
                 <>
-                  <Shield className="mr-2 h-4 w-4" />
+                  <Database className="mr-2 h-4 w-4" />
                   Store Encrypted Data
                 </>
               )}
@@ -302,7 +302,7 @@ export const EncryptedDataManager: React.FC = () => {
                 </>
               ) : (
                 <>
-                  <Lock className="mr-2 h-4 w-4" />
+                  <Key className="mr-2 h-4 w-4" />
                   Update Key
                 </>
               )}

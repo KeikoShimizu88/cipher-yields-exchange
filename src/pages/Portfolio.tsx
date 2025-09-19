@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { TrendingUp, TrendingDown, Shield, Eye, EyeOff, Wallet } from "lucide-react";
+import { TrendingUp, TrendingDown, Database, Eye, EyeOff, Wallet } from "lucide-react";
 
 const Portfolio = () => {
   const holdings = [
@@ -91,7 +91,7 @@ const Portfolio = () => {
                 {holdings.filter(h => h.encrypted).length}/{holdings.length}
               </p>
               <div className="flex items-center mt-2">
-                <Shield className="w-4 h-4 text-accent mr-2" />
+                <Database className="w-4 h-4 text-accent mr-2" />
                 <span className="text-sm text-muted-foreground">Secure until delivery</span>
               </div>
             </CardContent>
@@ -131,7 +131,7 @@ const Portfolio = () => {
                     >
                       {holding.encrypted ? (
                         <>
-                          <Shield className="w-3 h-3 mr-1" />
+                          <Database className="w-3 h-3 mr-1" />
                           ENCRYPTED
                         </>
                       ) : (
@@ -192,7 +192,7 @@ const Portfolio = () => {
             Close Position
           </Button>
           <Button variant="outline">
-            <Shield className="w-4 h-4 mr-2" />
+            <Database className="w-4 h-4 mr-2" />
             Encrypt Holdings
           </Button>
         </div>

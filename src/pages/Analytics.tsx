@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell } from "recharts";
-import { TrendingUp, TrendingDown, Activity, Shield, Clock, Target } from "lucide-react";
+import { TrendingUp, TrendingDown, Activity, Database, Clock, Target } from "lucide-react";
 
 const Analytics = () => {
   const performanceData = [
@@ -83,7 +83,7 @@ const Analytics = () => {
           <Card className="bg-card border-border/50">
             <CardHeader className="pb-3">
               <CardTitle className="text-sm text-muted-foreground flex items-center">
-                <Shield className="w-4 h-4 mr-2 text-primary" />
+                <Database className="w-4 h-4 mr-2 text-primary" />
                 Encryption Rate
               </CardTitle>
             </CardHeader>

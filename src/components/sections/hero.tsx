@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Shield, Lock, TrendingUp } from "lucide-react";
+import { Database, Key, TrendingUp } from "lucide-react";
 import heroBackground from "@/assets/hero-bg.jpg";
 
 export const HeroSection = () => {
@@ -25,7 +25,7 @@ export const HeroSection = () => {
             variant="outline" 
             className="border-accent text-accent glow-neon mb-4"
           >
-            <Lock className="w-3 h-3 mr-2" />
+            <Key className="w-3 h-3 mr-2" />
             Secure RWA Trading Platform
           </Badge>
 
@@ -45,7 +45,7 @@ export const HeroSection = () => {
           {/* Features */}
           <div className="flex flex-wrap justify-center gap-6 my-8">
             <div className="flex items-center space-x-2 text-sm">
-              <Shield className="w-4 h-4 text-accent" />
+              <Database className="w-4 h-4 text-accent" />
               <span>Encrypted Until Delivery</span>
             </div>
             <div className="flex items-center space-x-2 text-sm">
@@ -53,7 +53,7 @@ export const HeroSection = () => {
               <span>Real-World Assets</span>
             </div>
             <div className="flex items-center space-x-2 text-sm">
-              <Lock className="w-4 h-4 text-primary" />
+              <Key className="w-4 h-4 text-primary" />
               <span>Smart Contract Security</span>
             </div>
           </div>
@@ -63,6 +63,7 @@ export const HeroSection = () => {
             <Button 
               size="lg"
               className="bg-gradient-gold text-primary-foreground hover:opacity-90 glow-gold px-8 py-3"
+              onClick={() => window.location.href = '/markets'}
             >
               Start Trading
             </Button>
@@ -70,8 +71,9 @@ export const HeroSection = () => {
               size="lg" 
               variant="outline"
               className="border-accent text-accent hover:bg-accent hover:text-accent-foreground glow-neon px-8 py-3"
+              onClick={() => window.location.href = '/portfolio'}
             >
-              Connect Wallet
+              View Portfolio
             </Button>
           </div>
 
